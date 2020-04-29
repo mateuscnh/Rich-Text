@@ -74,10 +74,10 @@ function RichText() {
     // Pega os nomes do array "btnIcon" utilizados para obter os icon (FontAwesome) na function "createButtonIcons", tratando-os para reutiliza-los no "execCmd"
     function createOnClickButtons(btnCommand) {
         if (btnCommand === 'align-right') btnCommand = 'justifyRight';
-        if (btnCommand === 'align-justify') btnCommand = 'justifyCenter';
-        if (btnCommand === 'align-left') btnCommand = 'justifyLeft';
-        if (btnCommand === 'list-ul') btnCommand = 'insertUnorderedList';
-        if (btnCommand === 'list-ol') btnCommand = 'insertOrderedList';
+        else if (btnCommand === 'align-justify') btnCommand = 'justifyCenter';
+        else if (btnCommand === 'align-left') btnCommand = 'justifyLeft';
+        else if (btnCommand === 'list-ul') btnCommand = 'insertUnorderedList';
+        else if (btnCommand === 'list-ol') btnCommand = 'insertOrderedList';
 
         newButton.setAttribute('onclick', "execCmd('" + btnCommand + "')");
     }
@@ -101,6 +101,7 @@ function themeDark() {
         richTextField.document.execCommand('hiliteColor', false, '#333');
         execCmd('foreColor', '#fff');
         document.getElementById('richTextField').style.background = '#333';
+        document.getElementById('richTextField').style.sele = '#333';
     } else {
         document.body.style.background = '#fff';
         execCmd('selectAll');

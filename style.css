@@ -26,6 +26,7 @@ select{
     background: none;
     color: #555;
     font-weight: bold;
+    border-radius: 5px;
 }
 
 #tools{
