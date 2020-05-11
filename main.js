@@ -13,8 +13,6 @@ function RichText() {
     createSelectFontSize();
     createButtonIcons();
 
-    // Cria o "Select" para alterar a font do texto.
-    // "Setando" todos os atributos necessários como também o evento "onchange" que chama o "execCmd" quando selecionado uma opção.
     function createSelectFonts() {
         let fontNames = ['Arial', 'Courier', 'Tahoma', 'Times New Roman', 'Verdana'];
         newSelect = document.createElement('select');
@@ -29,7 +27,6 @@ function RichText() {
         tools.appendChild(newSelect);
     }
 
-    // Cria o "Select" para alterar o tamanho do texto.
     function createSelectFontSize() {
         newSelect = document.createElement('select');
         newSelect.setAttribute('onchange', "execCmd('fontSize', this.value)");
@@ -42,10 +39,6 @@ function RichText() {
         tools.appendChild(newSelect);
     }
 
-    // Cria os botões
-    // if == 0, 3, 6... chama a function "createButtonPartition()" que cria uma divisória
-    // nos outros casos ele vai criando os outros botões
-    // e no if == 7 cria uma ultima divisória
     function createButtonIcons() {
         let btnIcon = ['bold', 'italic', 'underline', 'align-right', 'align-justify', 'align-left', 'list-ul', 'list-ol'];
         for (let i = 0; i < btnIcon.length; i++) {
@@ -63,7 +56,6 @@ function RichText() {
         }
     }
 
-    // Cria a divisória
     function createButtonPartition() {
         newButton = document.createElement('button');
         newButton.setAttribute('class', 'partition');
@@ -71,7 +63,7 @@ function RichText() {
         tools.appendChild(newButton);
     }
 
-    // Pega os nomes do array "btnIcon" utilizados para obter os icon (FontAwesome) na function "createButtonIcons", tratando-os para reutiliza-los no "execCmd"
+ 
     function createOnClickButtons(btnCommand) {
         if (btnCommand === 'align-right') btnCommand = 'justifyRight';
         else if (btnCommand === 'align-justify') btnCommand = 'justifyCenter';
@@ -82,7 +74,6 @@ function RichText() {
         newButton.setAttribute('onclick', "execCmd('" + btnCommand + "')");
     }
 
-    // Button pra inserir Imagem
     newButton = document.createElement('button');
     newButton.setAttribute('class', 'btn');
     newButton.innerHTML = "<i class='fas fa-images'></i>";
