@@ -1,5 +1,5 @@
 # Rich Text
-Editor Rich Text responsivo com modo "DARK", bem simples, desenvolvido do zero em Javascript.
+Responsive Rich Text editor with "DARK" mode, very simple, developed to zero in Javascript.
 
 ### WEB
 ![image](img/light.png)
